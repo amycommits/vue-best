@@ -1,20 +1,14 @@
 <template>
-  <div class="home">
-    <input v-model="inputValue"/>
-    <div>
-      <h2>{{inputValue}}</h2>
-    </div>
-  </div>
+  <simple-input />
 </template>
 
 <script>
+import SimpleInput from '../components/SimpleInput.vue';
 // @ is an alias to /src
 export default {
   name: 'Home',
-  data() {
-    return {
-      inputValue: null,
-    };
+  components: {
+    SimpleInput,
   },
 };
 </script>
