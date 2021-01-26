@@ -39,11 +39,14 @@ export default {
         label: this.label, name: this.name, slug: this.slugName, value,
       });
     },
+    makeLabel() {
+      const label = this.name.split(' ');
+      label[0] = label[0].toLowerCase();
+      this.label = label.join('');
+    },
   },
   mounted() {
-    const label = this.name.split(' ');
-    label[0] = label[0].toLowerCase();
-    this.label = label.join('');
+    this.makeLabel();
     this.inputValue = new Date();
     this.handleChange(this.inputValue);
   },
