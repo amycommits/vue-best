@@ -10,6 +10,7 @@ export default {
       commit('CLEAR_FORM');
     },
     changeFormData({ commit }, info) {
+      console.log({ info });
       commit('CHANGE_FORM_DATA', info);
     },
   },
@@ -19,10 +20,10 @@ export default {
     },
     CHANGE_FORM_DATA(state, info) {
       // {name: '', value: ''}
-      if (!state.data[info.name]) {
-        state.data[info.name] = '';
+      if (!state.data[info.label]) {
+        state.data[info.label] = '';
       }
-      state.data[info.name] = info.value;
+      state.data[info.label] = info;
     },
   },
 };

@@ -4,10 +4,9 @@
     <input
       :name="slugName"
       :id="slugName"
-      type="text"
-      :placeholder="name"
+      type="date"
       v-model="inputValue"
-      @keyup="handleKeyUp(inputValue)"
+      @change="handleChange(inputValue)"
     >
   </div>
 </template>
@@ -32,7 +31,7 @@ export default {
   },
   methods: {
     ...mapActions('form', ['changeFormData']),
-    handleKeyUp(value) {
+    handleChange(value) {
       console.log({
         label: this.label, name: this.name, slug: this.slugName, value,
       });
@@ -45,6 +44,8 @@ export default {
     const label = this.name.split(' ');
     label[0] = label[0].toLowerCase();
     this.label = label.join('');
+    this.inputValue = new Date();
+    this.handleChange(this.inputValue);
   },
 };
 </script>
