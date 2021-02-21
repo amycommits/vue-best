@@ -32,9 +32,6 @@ export default {
   methods: {
     ...mapActions('form', ['changeFormData']),
     handleChange(value) {
-      console.log({
-        label: this.label, name: this.name, slug: this.slugName, value,
-      });
       this.$store.dispatch('changeFormData', {
         label: this.label, name: this.name, slug: this.slugName, value,
       });

@@ -1,14 +1,13 @@
 <template>
   <div>
     <label :for="slugName">{{name}}</label>
-    <input
+    <textarea
       :name="slugName"
       :id="slugName"
-      type="text"
       :placeholder="name"
       v-model="inputValue"
       @keyup="handleKeyUp(inputValue)"
-    >
+    />
   </div>
 </template>
 <script>
