@@ -1,4 +1,5 @@
 import { createStore } from 'vuex';
+import form from './modules/form.module';
 
 export default createStore({
   state: {
@@ -8,5 +9,6 @@ export default createStore({
   actions: {
   },
   modules: {
+    form,
   },
 });
