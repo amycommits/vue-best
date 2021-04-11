@@ -2,13 +2,9 @@ export default {
   namespaced: true,
   state: {
     data: {},
-    frontendTechnologies: ['JavaScript', 'VueJS', 'ReactJS', 'Angular'],
-    backendTechnologies: ['Ruby on Rails', 'Python'],
   },
   getters: {
     data: (state) => state.data,
-    frontendTechnologies: (state) => state.frontendTechnologies,
-    backendTechnologies: (state) => state.backendTechnologies,
   },
   actions: {
     clearForm({ commit }) {

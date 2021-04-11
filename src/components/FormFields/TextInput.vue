@@ -12,7 +12,6 @@
   </div>
 </template>
 <script>
-import { mapActions } from 'vuex';
 
 export default {
   name: 'TextInput',
@@ -31,9 +30,8 @@ export default {
     },
   },
   methods: {
-    ...mapActions('form', ['changeFormData']),
     handleKeyUp(value) {
-      this.$store.dispatch('changeFormData', {
+      this.$store.dispatch('form/changeFormData', {
         label: this.label, name: this.name, slug: this.slugName, value,
       });
     },

@@ -9,7 +9,7 @@
   </div>
 </template>
 <script>
-import { mapActions, mapGetters } from 'vuex';
+import { mapGetters } from 'vuex';
 import TextInput from '../components/FormFields/TextInput.vue';
 import DateInput from '../components/FormFields/DateInput.vue';
 import TextArea from '../components/FormFields/TextArea.vue';
@@ -24,12 +24,11 @@ export default {
     TextArea,
   },
   computed: {
-    ...mapGetters('form', ['frontendTechnologies']),
+    ...mapGetters(['frontendTechnologies']),
   },
   methods: {
-    ...mapActions('form', ['clearForm']),
     clearForm() {
-      this.$store.dispatch('clearForm');
+      this.$store.dispatch('form/clearForm');
     },
   },
   mounted() {
